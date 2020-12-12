@@ -3,7 +3,7 @@ const app = require('../server')
 describe('login Endpoints', () => {
     it('login user', async() => {
         const res = await request(app)
-            .post('/api/auth/signin')
+            .post('/api/auth/singin')
             .send({
                 email: 'ejemplo@gmail.com',
                 password: 'micontraseña',
@@ -15,7 +15,7 @@ describe('login Endpoints', () => {
 
     it('can not login user with invalid password', async() => {
         const res = await request(app)
-            .post('/api/auth/signin')
+            .post('/api/auth/singin')
             .send({
                 email: 'ejemplo@gmail.com',
                 password: 'micontraseñaa',
@@ -26,7 +26,7 @@ describe('login Endpoints', () => {
 
     it('can not login user with invalid username', async() => {
         const res = await request(app)
-            .post('/api/auth/signin')
+            .post('/api/auth/singin')
             .send({
                 email: 'ejempl@gmail.com',
                 password: 'micontraseña',
